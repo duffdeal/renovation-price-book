@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Renovation Price Book — what UK home projects actually cost</title>
+<meta name="description" content="A crowd-sourced price book of real UK renovation, extension and conversion quotes. Contribute one quote, see what everyone else actually paid.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <div class="wordmark">The Renovation <span class="accent">Price Book</span></div>
+    <div class="issue-line mono">London · Wednesday 9 September 2026 · Dataset build, week 1 · <a href="#contribute">Contribute a quote</a></div>
+  </div>
+</header>
+
+<main>
+  <!-- Stat-led hero: the real ONS figure -->
+  <section class="stat-hero wrap">
+    <div class="figure tnum">£40bn<span class="unit">a year</span></div>
+    <h1 class="hero-head">spent on UK home improvements — and nobody keeps the price book.</h1>
+    <p class="hero-sub">About £40 billion a year goes to builders, extensions, loft conversions and kitchens. Every other big purchase has a price book: cars, holidays, salaries. Renovation doesn’t — just “get three quotes and hope.” We’re building the missing book, out of real quotes.</p>
+    <p class="src-note">Households spent ~£60bn repairing, maintaining and improving homes in 2021–22, roughly £40bn of it contracted out — <a href="https://primethorpepaving.co.uk/blogs/articles/home-improvement-statistics" rel="nofollow">ONS via Primethorpe, 2026</a></p>
+    <a class="cta-outline" href="#contribute">Add your quote →</a>
+  </section>
+
+  <hr class="rule">
+
+  <!-- How it works -->
+  <section class="how wrap" id="how">
+    <div class="how-grid">
+      <div class="step reveal">
+        <div class="num mono">01 · SUBMIT</div>
+        <h3>Enter one quote you’ve had</h3>
+        <p>Any recent quote for an extension, loft, kitchen or renovation. Two minutes, no paperwork — the numbers off the page.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num mono">02 · UNLOCK</div>
+        <h3>See what everyone else paid</h3>
+        <p>Every contributor gets the full dataset as it grows: medians and ranges by project type and postcode district.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num mono">03 · DECIDE</div>
+        <h3>Negotiate from evidence</h3>
+        <p>Know whether £65,000 for a rear extension in your area is fair, lucky, or taking the mickey — before you sign.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- Preview table (illustrative, labelled) -->
+  <section class="preview wrap" id="data">
+    <h2>What the book will hold</h2>
+    <p class="preview-sub">Illustrative medians from published 2026 guides (Fifi McGee community survey; RenoCalc; Builder Expert) — replaced by submitted quotes as they arrive.</p>
+    <div class="table-scroll">
+      <table class="data">
+        <thead>
+          <tr><th scope="col">Project</th><th scope="col">Typical median</th><th scope="col">Observed range</th><th scope="col">Source</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Rear extension, 20–30 m²</td><td class="med">£62,000</td><td class="range">£40,000 – £95,000</td><td class="mono">published guide</td></tr>
+          <tr><td>Loft conversion, basic</td><td class="med">£35,000</td><td class="range">£25,000 – £55,000</td><td class="mono">published guide</td></tr>
+          <tr><td>Loft conversion, dormer + en-suite</td><td class="med">£55,000</td><td class="range">£40,000 – £80,000</td><td class="mono">published guide</td></tr>
+          <tr><td>Kitchen replacement, mid-spec, supply &amp; fit</td><td class="med">£18,000</td><td class="range">£10,000 – £30,000</td><td class="mono">published guide</td></tr>
+          <tr><td>Your projects</td><td class="med">—</td><td class="range">to be filled by contributors</td><td class="mono">you, here</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="src-note">Whole-house renovations run roughly £1,200–£2,800 per m² depending on spec and region.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- Contribution form -->
+  <section class="contribute wrap" id="contribute">
+    <div class="contribute-head">
+      <h2>Add a quote, get the book</h2>
+      <p class="lede">One quote per submission — got three? Send the most recent. You’ll get the invite link to the full dataset by email as soon as it opens.</p>
+    </div>
+
+    <form class="quote-form" id="quoteForm" novalidate>
+      <div class="f-grid">
+        <div class="field f-row">
+          <label for="postcode">Postcode district <span class="req">*</span></label>
+          <input type="text" id="postcode" name="Postcode district" required placeholder="e.g. N1, SE15, M14" autocomplete="postal-code">
+          <span class="hint">District only — the part before the space. Never the full postcode.</span>
+        </div>
+        <div class="field f-row">
+          <label for="project">Project type <span class="req">*</span></label>
+          <select id="project" name="Project type" required>
+            <option value="">Choose…</option>
+            <option>Rear / side extension</option>
+            <option>Loft conversion</option>
+            <option>Kitchen replacement</option>
+            <option>Whole-house renovation</option>
+            <option>Other (describe below)</option>
+          </select>
+        </div>
+        <div class="field f-row">
+          <label for="spec">Brief spec <span class="req">*</span></label>
+          <input type="text" id="spec" name="Brief spec" required placeholder="e.g. 24 m² single-storey, bi-fold doors, mid-spec finish">
+          <span class="hint">Size and finish level help the median mean something.</span>
+        </div>
+        <div class="field f-row">
+          <label for="quotes">Number of quotes you got</label>
+          <select id="quotes" name="Number of quotes">
+            <option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+          </select>
+        </div>
+        <div class="field f-row">
+          <label for="lowest">Lowest quote <span class="req">*</span> (£)</label>
+          <input type="number" id="lowest" name="Lowest quote GBP" min="500" max="2000000" required inputmode="numeric" placeholder="e.g. 58000">
+        </div>
+        <div class="field f-row">
+          <label for="highest">Highest quote <span class="req">*</span> (£)</label>
+          <input type="number" id="highest" name="Highest quote GBP" min="500" max="2000000" required inputmode="numeric" placeholder="e.g. 91000">
+        </div>
+        <div class="field f-row">
+          <label for="stage">Where are you in the project?</label>
+          <select id="stage" name="Project stage">
+            <option value="">—</option>
+            <option>Just gathering quotes</option>
+            <option>Chose a builder</option>
+            <option>Work under way</option>
+            <option>Finished — actual cost known</option>
+          </select>
+        </div>
+        <div class="field f-row">
+          <label for="name">Name or initials (optional)</label>
+          <input type="text" id="name" name="Name (optional)" autocomplete="name">
+        </div>
+        <div class="field f-row">
+          <label for="email">Email <span class="req">*</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com">
+          <span class="hint">Used once to send your invite link. Never published.</span>
+        </div>
+        <div class="field f-row">
+          <label for="notes">Anything odd about the quotes? (optional)</label>
+          <input type="text" id="notes" name="Notes (optional)" placeholder="e.g. one builder wouldn’t itemise scaffolding">
+        </div>
+      </div>
+
+      <fieldset class="f-row">
+        <legend class="legend-label">Do you consent to your figures appearing anonymised in the public price book? <span class="req">*</span></legend>
+        <div class="radio-row">
+          <label><input type="radio" name="Anonymised use consent" value="Yes" required> Yes</label>
+          <label><input type="radio" name="Anonymised use consent" value="Ask me first"> Ask me first</label>
+          <label><input type="radio" name="Anonymised use consent" value="No"> No</label>
+        </div>
+      </fieldset>
+
+      <div class="field f-row consent">
+        <label><input type="checkbox" name="Data privacy consent" value="Agreed" required> I’m happy for these details to be used to build the anonymised price book, per the <a href="#faq-privacy">privacy note</a> below.</label>
+      </div>
+
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="_subject" value="New quote contribution — The Renovation Price Book">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+
+      <button class="btn-submit" type="submit" id="submitBtn">Submit quote</button>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <hr class="rule">
+
+  <!-- FAQ -->
+  <section class="faq wrap-narrow" id="faq">
+    <h2>Questions, honestly answered</h2>
+    <div class="faq-item" id="faq-privacy">
+      <h3>What happens to my data?</h3>
+      <p>Figures appear only anonymised: project type, spec, range and postcode district — never your name, email or full postcode. Your email is used once to send the invite link, then kept off anything public. Ask to be deleted any time and it’s gone.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do you stop fake numbers?</h3>
+      <p>Sanity ranges on submission, cross-checks against filed planning applications where possible, and obviously-off entries get removed. Early on the book will say how many entries stand behind every figure — small numbers will be labelled small.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Why contribute instead of waiting?</h3>
+      <p>Because the book only exists if people do exactly what you’d want others to do. Contributors get lifetime free access; later it goes paid for trade and data customers, and free forever for the people who built it.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Who’s behind this?</h3>
+      <p>Thomas Jacks, London. This page is the test: if enough real quotes arrive in the next few weeks, the full book gets built. If you have questions before contributing, email <a href="mailto:thomasalexanderjacks@gmail.com">thomasalexanderjacks@gmail.com</a>.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is this a lead-generation site for builders?</h3>
+      <p>No. Nothing here routes you to a builder or sells your details on. The only product is the dataset.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- Final CTA -->
+  <section class="final-cta wrap">
+    <h2>Have a quote in a drawer?</h2>
+    <p class="lede">Three minutes now, and you’ll be first through the door when the book opens.</p>
+    <a class="cta-outline" href="#contribute">Add your quote →</a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-band">
+    <div class="foot-word">The Renovation Price Book</div>
+    <div class="foot-tag">Real quotes. Real postcodes. No guesswork.</div>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#how">How it works</a> · <a href="#data">The data</a> · <a href="#faq">FAQ</a> · <a href="mailto:thomasalexanderjacks@gmail.com">Contact</a>
+    </nav>
+  </div>
+  <div class="wrap foot-meta mono">© 2026 · Figures shown before launch are illustrative and attributed. Submitted data is anonymised before publication.</div>
+</footer>
+
+<script>
+(function () {
+  var form = document.getElementById('quoteForm');
+  var btn = document.getElementById('submitBtn');
+  var status = document.getElementById('formStatus');
+  var ENDPOINT = 'https://formsubmit.co/ajax/thomasalexanderjacks@gmail.com';
+
+  // reveal-on-scroll (one orchestrated entrance)
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    status.classList.remove('ok', 'err');
+
+    if (form._honey.value) { return; } // bot
+
+    var lo = parseInt(form['Lowest quote GBP'].value, 10);
+    var hi = parseInt(form['Highest quote GBP'].value, 10);
+    var pc = form['Postcode district'].value.trim();
+    if (!pc) return fail('Please add your postcode district (e.g. N1).');
+    if (!lo || !hi) return fail('Please enter your lowest and highest quotes.');
+    if (lo > hi) { var t = lo; lo = hi; hi = t;
+      form['Lowest quote GBP'].value = lo; form['Highest quote GBP'].value = hi; }
+    if (!form.email.value.trim() || form.email.value.indexOf('@') < 1) return fail('Please add a valid email so we can send your invite link.');
+
+    btn.disabled = true;
+    status.textContent = 'Sending…';
+
+    var payload = {};
+    new FormData(form).forEach(function (v, k) { if (k !== '_honey') payload[k] = v; });
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function () {
+      status.textContent = '';
+      form.innerHTML = '<p class="lede" style="font-size:1.25rem">Received — thank you. Your invite link will arrive at <strong>' +
+        payload.email.replace(/</g, '&lt;') + '</strong> when the book opens. One favour: if a friend has had building work done, this page is the link to send them.</p>';
+    })
+    .catch(function () {
+      btn.disabled = false;
+      status.textContent = '';
+      fail('Something went wrong sending the form. Email your quote details to thomasalexanderjacks@gmail.com instead — same deal.');
+    });
+
+    function fail(msg) { status.classList.add('err'); status.textContent = msg; btn.disabled = false; }
+  });
+})();
+</script>
+</body>
+</html>
