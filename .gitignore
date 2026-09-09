@@ -1,2 +1,8 @@
 .hallmark/
-reddit-sources/
+SEEDING-KIT.md
+PLAN-WEEK1.md
+tracker.csv
+tally.py
+pb_*.json
+fs_msg.json
+activate.html
