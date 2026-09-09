@@ -227,6 +227,16 @@
   }, { threshold: 0.15 });
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 
+  // channel attribution: /?src=reddit etc. lands in the email as "Traffic source"
+  var src = new URLSearchParams(location.search).get('src');
+  if (src) {
+    var srcField = document.createElement('input');
+    srcField.type = 'hidden';
+    srcField.name = 'Traffic source';
+    srcField.value = src;
+    form.appendChild(srcField);
+  }
+
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     status.classList.remove('ok', 'err');
